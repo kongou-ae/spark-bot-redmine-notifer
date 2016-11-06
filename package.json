@@ -1,0 +1,26 @@
+{
+  "name": "spark-bot-redmine-notifer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kongou-ae/spark-bot-redmine-notifer.git"
+  },
+  "author": "kongou-ae",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kongou-ae/spark-bot-redmine-notifer/issues"
+  },
+  "homepage": "https://github.com/kongou-ae/spark-bot-redmine-notifer#readme",
+  "dependencies": {
+    "csco-spark": "^3.2.0",
+    "feedparser": "^1.1.5",
+    "moment": "^2.15.2",
+    "node-schedule": "^1.2.0",
+    "request": "^2.78.0"
+  }
+}

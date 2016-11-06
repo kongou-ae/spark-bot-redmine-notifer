@@ -1,0 +1,9 @@
+{
+  "redmine":{
+    "atom":"http://your-redmine-fqdn/activity.atom?key=your-atom-key"
+  },
+  "spark":{
+    "token":"your-spark-token",
+    "roomId":"your-spark-rookid"
+  }
+}
