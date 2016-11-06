@@ -61,9 +61,10 @@ var j = schedule.scheduleJob('*/5 * * * 0-6', function(){
           diff = 1
         }
       }
-      if (updateTimeBeforeNow.match(/seconds/)){
-        diff = 0.1
-      }
+      // 同じ更新が2度チャットに流れたので削除
+      //if (updateTimeBeforeNow.match(/seconds/)){
+      //  diff = 0.1
+      //}
 
       // diff == "" は1時間以上前の更新だからスキップ
       if ( diff != ""){
