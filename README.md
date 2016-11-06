@@ -2,6 +2,8 @@
 
 This script send the update information of redmine to Cisco Spark every 5 minutes.
 
+![chat](https://github.com/kongou-ae/spark-bot-redmine-notifer/raw/master/sample.png)
+
 ## Usage
 1. make 'config.json'
 1. node indes.js

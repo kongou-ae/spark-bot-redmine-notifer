@@ -1,6 +1,6 @@
 {
   "redmine":{
-    "atom":"http://your-redmine-fqdn/activity.atom?key=your-atom-key"
+    "atom":"http://your-redmine-fqdn/your-project/activity.atom?key=your-atom-key"
   },
   "spark":{
     "token":"your-spark-token",
