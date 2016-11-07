@@ -1,15 +1,35 @@
 'use strict'
 
 var Spark = require('csco-spark');
-var config = require('./config.json')
 var FeedParser = require('feedparser');
 var request = require('request');
 var moment = require("moment");
 var schedule = require('node-schedule');
+var program = require('commander');
+
+program
+  .version('0.0.1')
+  .option('-c, --config <config file>', 'set config file (default config.json)')
+  .parse(process.argv);
+
+// -c オプションがなければ、デフォルト値のconfig.jsonを設定
+if (program.config == null){
+  program.config = 'config.json'
+}
+
+// 与えられたコンフィグファイルの拡張子が.jsonでなければエラーにする
+if (!program.config.match(/\.json$/)){
+  throw new Error('config file must be json format.')
+}
+
+var config = require('./'+ program.config )
 var spark = Spark({
   uri: 'https://api.ciscospark.com/v1',
   token: config.spark.token
 });
+
+console.log('Config file is '+ program.config)
+console.log('Start spark-bot-redmine-notifer')
 
 var j = schedule.scheduleJob('*/5 * * * 0-6', function(){
 
@@ -61,10 +81,6 @@ var j = schedule.scheduleJob('*/5 * * * 0-6', function(){
           diff = 1
         }
       }
-      // 同じ更新が2度チャットに流れたので削除
-      //if (updateTimeBeforeNow.match(/seconds/)){
-      //  diff = 0.1
-      //}
 
       // diff == "" は1時間以上前の更新だからスキップ
       if ( diff != ""){
